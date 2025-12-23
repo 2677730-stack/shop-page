@@ -244,18 +244,25 @@ header h1 {
     border-radius: 6px;
     transition: transform 0.7s ease, opacity 0.7s ease;
 }
-/* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
+/* ======================================================
+   🟢🟢🟢 МОБИЛЬНАЯ АДАПТАЦИЯ (ТЕЛЕФОНЫ)
+   Этот блок отвечает ТОЛЬКО за экраны до 768px
+   ====================================================== */
+
 @media (max-width: 768px) {
 
+    /* 🟢 Общие отступы */
     body {
         padding: 0 10px;
     }
 
+    /* 🟢 Поле поиска */
     .search input {
         width: 100%;
         font-size: 16px;
     }
 
+    /* 🟢 Фильтры */
     .filters {
         flex-wrap: wrap;
         gap: 8px;
@@ -263,45 +270,69 @@ header h1 {
 
     .filter-btn {
         flex: 1 1 45%;
-        font-size: 13px;
-        padding: 10px;
-    }
-
-    .catalog {
-        gap: 12px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 340px;
-    }
-
-    .img-wrapper {
-        height: 160px;
-    }
-
-    #cart {
-        right: 0;
-        left: 0;
-        width: 100%;
-        top: 0;
-        max-height: 100vh;
-        border-radius: 0;
-    }
-
-    #cart-btn {
-        top: auto;
-        bottom: 15px;
-        right: 15px;
         font-size: 14px;
         padding: 10px;
     }
 
+    /* 🟢 Каталог */
+    .catalog {
+        gap: 12px;
+    }
+
+    /* 🟢 Карточка товара */
+    .card {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .img-wrapper {
+        height: 200px;
+    }
+
+    .card h2 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .card .price {
+        font-size: 15px;
+    }
+
+    .card .buy {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    /* 🟢 Кнопка корзины */
+    #cart-btn {
+        top: auto;
+        bottom: 15px;
+        right: 15px;
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+
+    /* 🟢 Корзина */
+    #cart {
+        width: 95%;
+        right: 2.5%;
+        top: auto;
+        bottom: 80px;
+        max-height: 70vh;
+    }
+
+    /* 🟢 Модальное окно заказа */
     .modal {
         width: 90%;
-        max-width: 350px;
     }
 }
+
+/* ======================================================
+   🟢 КОНЕЦ МОБИЛЬНОГО БЛОКА
+   ====================================================== */
 
 @media (hover: none) {
     .card:hover,
