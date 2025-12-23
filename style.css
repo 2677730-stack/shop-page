@@ -244,53 +244,65 @@ header h1 {
     border-radius: 6px;
     transition: transform 0.7s ease, opacity 0.7s ease;
 }
+/* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
 @media (max-width: 768px) {
-    #cart {
-        width: 95%;
-        right: 2.5%;
-        top: 70px;
-        padding: 15px;
-    }
-}
-@media (max-width: 768px) {
-    .card {
-        width: 45%;
-        padding: 12px;
+
+    body {
+        padding: 0 10px;
     }
 
-    .img-wrapper {
-        height: 140px;
-    }
-}
-@media (max-width: 768px) {
     .search input {
         width: 100%;
+        font-size: 16px;
     }
-}
-@media (max-width: 768px) {
+
     .filters {
         flex-wrap: wrap;
+        gap: 8px;
     }
 
     .filter-btn {
         flex: 1 1 45%;
-        text-align: center;
+        font-size: 13px;
+        padding: 10px;
     }
-}
-@media (max-width: 480px) {
+
+    .catalog {
+        gap: 12px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .img-wrapper {
+        height: 160px;
+    }
+
+    #cart {
+        right: 0;
+        left: 0;
+        width: 100%;
+        top: 0;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    #cart-btn {
+        top: auto;
+        bottom: 15px;
+        right: 15px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
     .modal {
         width: 90%;
-        padding: 15px;
+        max-width: 350px;
     }
 }
-@media (max-width: 768px) {
-    #cart-btn {
-        font-size: 14px;
-        padding: 8px 12px;
-        top: 10px;
-        right: 10px;
-    }
-}
+
 @media (hover: none) {
     .card:hover,
     .img-wrapper img:hover {
