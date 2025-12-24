@@ -302,6 +302,8 @@ header h1 {
     .continue-btn,
     .order-btn {
         width: 100%;
+        padding: 14px;
+        font-size: 16px;
     }
 
     /* ---------- Кнопка корзины ---------- */
@@ -313,9 +315,24 @@ header h1 {
     }
 
     /* ---------- Модалка заказа ---------- */
-    .modal {
-        width: calc(100% - 20px);
-        max-width: none;
+        .modal {
+        width: 90%;              /* чтобы не вылезала по ширине */
+        max-height: 90vh;        /* не выше экрана */
+        overflow-y: auto;        /* прокрутка внутри */
+        top: 45%;                /* чуть выше центра */
+        padding: 15px;
+    }
+
+    .modal h2 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .modal input,
+    .modal textarea {
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
     }
 }
 
