@@ -68,10 +68,10 @@ function clearCart() {
 
 // ------------------- Модалка заказа -------------------
 function openOrder() {
+    document.getElementById('cart').classList.remove('show')
     document.getElementById('orderModal').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
-    const cartDiv = document.getElementById('cart');
-    cartDiv.classList.toggle('show');
+    
 }
 
 function closeOrder() {
