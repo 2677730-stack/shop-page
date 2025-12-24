@@ -70,6 +70,8 @@ function clearCart() {
 function openOrder() {
     document.getElementById('orderModal').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
+    const cartDiv = document.getElementById('cart');
+    cartDiv.classList.toggle('show');
 }
 
 function closeOrder() {
