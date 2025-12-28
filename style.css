@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0 20px;
-    background: #f5f5f5;
+    padding-top: 150px;
+    background: #8d8d8da6;
+    overflow-y: auto;
 }
 
 header h1 {
@@ -341,4 +342,179 @@ header h1 {
     .img-wrapper img:hover {
         transform: none;
     }
+}
+
+/* лёгкий эффект при наведении (ПК) */
+@media (hover: hover) {
+    .logo img:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+
+/* ================= ШАПКА ================= */
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(
+        90deg,
+        #000 0%,
+        #ff0000 20%,
+        #494848 50%,
+        #13e3d8 100%
+    );
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.top-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ---------- ЛОГО ---------- */
+.logo img {
+    height: 90px; /* 👈 ПК */
+    object-fit: contain;
+}
+
+/* ---------- ТЕКСТ ---------- */
+.header-center h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* ---------- ПОИСК ---------- */
+.top-bar .search input {
+    width: 220px;
+}
+
+/* ---------- ФИЛЬТРЫ ---------- */
+.top-bar .filters {
+    display: flex;
+    gap: 8px;
+}
+
+/* ---------- ОТСТУП ДЛЯ КОНТЕНТА ---------- */
+body {
+    padding-top: 150px; /* 👈 под шапку */
+}
+
+/* ================= 📱 МОБИЛЬНАЯ ВЕРСИЯ ================= */
+@media (max-width: 768px) {
+
+    .top-bar-inner {
+        flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 36px; /* 🔥 ВАЖНО: маленькая шапка */
+    }
+
+    .header-center h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .top-bar .search input {
+        width: 100%;
+    }
+
+    .top-bar .filters {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+}
+/* ================= ПОДВАЛ ================= */
+.site-footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 25px 20px;
+    text-align: center;
+    background: #111;
+    color: #aaa;
+    box-sizing: border-box;
+}
+
+.site-footer a {
+    color: #00e5ff;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+opacity: 0.6;
+}
+/* ===== ПОДФИЛЬТРЫ ===== */
+.filter-group {
+    position: relative;
+}
+
+.filter-group .sub-filters {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #222;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 2000;
+    min-width: 140px;
+}
+
+.filter-group .sub-filters button {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter-group .sub-filters button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* 📱 МОБИЛКА */
+@media (max-width: 768px) {
+    .filter-group .sub-filters {
+        position: static;
+        box-shadow: none;
+        background: rgba(0,0,0,0.3);
+        margin-top: 6px;
+    }
+}
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+html {
+    height: auto;
+    overflow-y: auto;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0,5);
+    z-index: 1500;
 }

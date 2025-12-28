@@ -71,12 +71,14 @@ function openOrder() {
     document.getElementById('cart').classList.remove('show')
     document.getElementById('orderModal').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden'
     
 }
 
 function closeOrder() {
     document.getElementById('orderModal').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
+    document.body.style.overflow = 'auto'
 }
 
 // ------------------- Отправка заказа в Telegram -------------------
@@ -149,4 +151,15 @@ function jumpCartCounter() {
     const cartBtn = document.getElementById('cart-btn');
     cartBtn.classList.add('jump');
     setTimeout(() => cartBtn.classList.remove('jump'), 300);
+}
+function toggleSubFilters(button) {
+    const group = button.parentElement;
+    const sub = group.querySelector('.sub-filters');
+
+    // закрываем другие
+    document.querySelectorAll('.sub-filters').forEach(el => {
+        if (el !== sub) el.style.display = 'none';
+    });
+
+    sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
 }

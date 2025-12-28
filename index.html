@@ -5,11 +5,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Каталог товаров</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="orderModal" class="modal">
     <span class="close" onclick="closeOrder()">×</span>
     <h2>Оформление заказа</h2>
@@ -43,21 +41,80 @@
     </div>
 </div>
 
-<header>
-    <h1>Каталог товаров</h1>
-</header>
+<!-- =====================================================
+     🔒 ФИКСИРОВАННАЯ ШАПКА (НЕ ДВИГАЕТСЯ ПРИ СКРОЛЛЕ)
+     ===================================================== -->
+<!-- ================= ШАПКА САЙТА ================= -->
+<div class="top-bar">
+    <div class="top-bar-inner">
 
-<div class="search">
-    <input type="text" placeholder="Поиск по товарам..." oninput="searchProducts(this.value)">
+        <!-- 🔰 ЛОГО (меняешь картинку тут) -->
+        <div class="logo">
+            <img src="images/logo.png" alt="VapeTrip logo">
+        </div>
+
+        <!-- 🔍 ПОИСК -->
+        <div class="search">
+            <input type="text"
+                   placeholder="Поиск по товарам..."
+                   oninput="searchProducts(this.value)">
+        </div>
+
+      <div class="filters">
+
+    <button class="filter-btn active" onclick="filterProducts('all', this)">
+        Все
+    </button>
+
+    <div class="filter-group">
+
+        <button class="filter-btn has-sub" onclick="toggleSubFilters(this)">
+        Под-системы ⏷
+        </button>
+
+        <div class="sub-filters">
+            <button onclick="filterProducts('podes', this)">Все</button>
+            <button onclick="filterProducts('podes-50', this)">Менее 50 ватт</button>
+            <button onclick="filterProducts('podes-100', this)">Более 50 ватт</button>
+        </div>
+
+    </div>
+
+    <button class="filter-btn" onclick="filterProducts('hq', this)">
+        Одноразки
+    </button>
+
+    <button class="filter-btn" onclick="filterProducts('parts', this)">
+        Испарители
+    </button>
+
+
+    <!-- 🔽 ФИЛЬТР С ПОДФИЛЬТРАМИ -->
+    <div class="filter-group">
+
+        <button class="filter-btn has-sub" onclick="toggleSubFilters(this)">
+            Жидкости ⏷
+        </button>
+
+        <div class="sub-filters">
+            <button onclick="filterProducts('liquids', this)">Все</button>
+            <button onclick="filterProducts('liquids-Stock', this)">Сток</button>
+            <button onclick="filterProducts('liquids-premium', this)">Премки</button>
+        </div>
+
+    </div>
+
+    <button class="filter-btn" onclick="filterProducts('ras',this)">   
+        расходники
+    </button>
+
 </div>
 
-<div class="filters">
-    <button class="filter-btn active" onclick="filterProducts('all', this)">Все</button>
-    <button class="filter-btn" onclick="filterProducts('podes', this)">Под-системы</button>
-    <button class="filter-btn" onclick="filterProducts('hq', this)">Одноразки</button>
-    <button class="filter-btn" onclick="filterProducts('liquids', this)">Жидкости</button>
-    <button class="filter-btn" onclick="filterProducts('parts', this)">Испарители</button>
+
+    </div>
 </div>
+<!-- =============== КОНЕЦ ШАПКИ ================= -->
+
 
 <main class="catalog">
     <!--тут начинается карта товара при добавлении нового копируй и изменяй-->
@@ -65,8 +122,16 @@
         <div class="img-wrapper">
             <img src="images/passito-3.png" alt="">
         </div>
-        <h2>Passito 3 (белый)</h2>
-        <p>Описание товара</p>
+        <h2>Pasito 3 (белый)</h2>
+        <p>Питание: встроенная АКБ 2800 мАч
+            Порт / ток зарядки: Type-C, ток зарядки 4А
+            Емкость картриджа: 7.0 мл
+            Тип / сопротивление испарителя: K-series coils
+            Мощность: 5 – 100 Вт
+            Особенности: Bluetooth, виброотклик
+            Режим работы: VW (Strong/Norm/ Soft/DVW)
+            Тип коннектора: магнитный
+        </p>
         <span class="price">3800 ₽</span>
         <button class="buy" onclick="addToCart('Passito 3 (белый)', 3800, this)">Купить</button>
     </div>
@@ -74,26 +139,300 @@
 
     <div class="card" data-category="liquids">
         <div class="img-wrapper">
-            <img src="images/monashka.jpg" alt="">
+            <img src="images/Bjorn_Zloy_Dvoyka.jpg" alt="">
         </div>
-        <h2>злая монашка</h2>
-        <p>Описание товара</p>
+        <h2>Bjorn Zloy 2%</h2>
+        <p>Жидкость от проиводителя одноразовых электронных сигарет Bjorn</p>
         <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('злая монашка', 500, this)">Купить</button>
+        <button class="buy" onclick="addToCart('Bjorn_Zloy_Dvoyka', 500, this)">Купить</button>
     </div>
+
     <div class="card" data-category="liquids">
         <div class="img-wrapper">
-            <img src="images/podonki.jpg" alt="">
+            <img src="images/Bjorn_Zloy_Strong.jpg" alt="">
         </div>
-        <h2>подонки</h2>
-        <p>Описание товара</p>
+        <h2>Bjorn Zloy 2% Storng </h2>
+        <p>крепкая жидкость от проиводителя одноразовых электронных сигарет Bjorn</p>
         <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('подонки', 500, this)">Купить</button>
+        <button class="buy" onclick="addToCart('Bjorn_Zloy_Strong', 500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/ZlayaMonashka_TPL_Sour.jpg" alt="">
+        </div>
+        <h2>Злая монашка 70мг</h2>
+        <p>Злая, крепкая, кислая и главное вкусная!</p>
+        <span class="price">500 ₽</span>
+        <button class="buy" onclick="addToCart('Злая монашка', 500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/Podonki_Critical1.jpg" alt="">
+        </div>
+        <h2>Podonki Critical Super Hard</h2>
+        <p>Лучшая линейка жидкости от компании Podonki </p>
+        <span class="price">500 ₽</span>
+        <button class="buy" onclick="addToCart('Podonki Critical', 500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/ZlayaMonashka_Hotspot.jpg" alt="">
+        </div>
+        <h2>Монашка & HotSpot</h2>
+        <p>Максимально удачная коллаборация! Максимум вкуса, максимум крепкости!</p>
+        <span class="price">500 ₽</span>
+        <button class="buy" onclick="addToCart('Монашка & HotSpot', 500, this)">Купить</button>
+    </div>
+
+     <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/Blum.jfif" alt="">
+        </div>
+        <h2>Blum 7%+</h2>
+        <p>Премиальная жидкость с гарантией отличной вкусопередачи и честной крепкости!</p>
+        <span class="price">850 ₽</span>
+        <button class="buy" onclick="addToCart('Blum 7%+', 850, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/Chakra_Liquid2.jpg" alt="">
+        </div>
+        <h2>Chakra 2%</h2>
+        <p>CHAKRA — линейка чистых, чувственных и ярких солевых жидкостей от создателей Аляски и Овермач.</p>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Chakra 2%', 450, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/RaMNaZamerzone.png" alt="">
+        </div>
+        <h2>Рик и Морти на замерзоне 2% Strong </h2>
+        <p>Не взирая на название эта жидкость не обладает вырвиглазным холодком,
+             а усовершенствованая технология производства компании "Tasty Lab" предоставляет улучшенную вкусопередачу!</p>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Рик и Морти на замерзоне 2% Strong', 450, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/RickAndMortyTheAnime.jpg" alt="">
+        </div>
+        <h2>Rick and Morty The Anime 2% Strong</h2>
+        <p>Более крепкая линейка жидкости Rick and Morty от компании "tasty Lab"</p>
+        <span class="price">500 ₽</span>
+        <button class="buy" onclick="addToCart('Rick and Morty The Anime', 500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/VlagaStrong.png" alt="">
+        </div>
+        <h2>Vlaga 2% Strong</h2>
+        <p>Относительно свежий представитель стильной и вкусной жидкости сделанной с душой!</p>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Vlaga Strong', 450, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/Chakra_Liquid2.jpg" alt="">
+        </div>
+        <h2>Chakra 2%</h2>
+        <p></p>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Chakra 2%', 450, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="liquids">
+        <div class="img-wrapper">
+            <img src="images/ElfLiq.png" alt="">
+        </div>
+        <h2>ElfLiq 30мл</h2>
+        <p>Премиальная линейка жидкостей от популярного производителя одноразовых электронных сигарет "ELF BAR"</p>
+        <span class="price">700 ₽</span>
+        <button class="buy" onclick="addToCart('ElfLiq 30мл', 700, this)">Купить</button>
+    </div>
+
+      <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/LostMaryMO30000.png" alt="">
+        </div>
+        <h2>Lost Mary MO 30,000</h2>
+        <p>Lost Mary MO 30000 предлагает новейший мягкий режим, обеспечивающий ультрамягкий вкус.
+             Разработчики утверждают, что постоянство вкуса достигает более 90%, что значительно превосходит отраслевые стандарты.</p>
+        <span class="price">1550 ₽</span>
+        <button class="buy" onclick="addToCart('LostMary MO 30,000', 1550, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/PuffmiSatisfy35.png" alt="">
+        </div>
+        <h2>Puffmi Satisfy 35,000 Ultra Strong</h2>
+        <p>Puffmi Satisfy это отличная альтернатива полюбившимся многим одноразкам Pafos. 
+        Их достоинства высокая крепкость, отличная вкусопередача и отличное соотношение цена/качество!</p>
+        <span class="price">1650 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1650, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/PuffmiMosh40.png" alt="">
+        </div>
+        <h2>Puffmi Mosh 40,000</h2>
+        <p>Puffmi Mosh это про мощь вкуса, мощь ощущений.
+        Данная версия чуть менее крепкая чем линейка Satisfy из-за отсутвия сильного ТХ (удару по горлу), но всё такая же крепкая!</p>
+        <span class="price">1650 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1650, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/Puffmi Flora 25.jpg" alt="">
+        </div>
+        <h2>Puffmi Flora 25,000</h2>
+        <p>Puffmi Flora стильная одноразка, как флакон духов с жемчужной цепочкой!
+        Puffmi Flora- самая красивая электронка из всех, что у вас была. </p>
+        <span class="price">1600 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Flora 25,000', 1600, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/ElfBarBC30.jpg" alt="">
+        </div>
+        <h2>Elf Bar BC 30,000</h2>
+        <p>Очередная новинка от компании "Elf Bar"
+        Предоставляющая стильный дизайн, информативный экран на лицевой стороне и возможностью регулировки интенсивности парения.
+        Перед потреблением незабудьте включить!</p>
+        <span class="price">1550 ₽</span>
+        <button class="buy" onclick="addToCart('Elf Bar BC 30,000', 1550, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="hq">
+        <div class="img-wrapper">
+            <img src="images/XEO35.png" alt="">
+        </div>
+        <h2>XEO Mesh 35,000</h2>
+        <p></p>
+        <span class="price">1000 ₽</span>
+        <button class="buy" onclick="addToCart('XEO Mesh 35,000', 1000, this)">Купить</button>
+    </div>
+
+     <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Xros5.webp" alt="">
+        </div>
+        <h2>Xros 5</h2>
+        <p></p>
+        <span class="price">2700 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 2700, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Xros_5_mini.jpeg" alt="">
+        </div>
+        <h2>Xros 5 mini</h2>
+        <p></p>
+        <span class="price">2000 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5 mini', 2000, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Boost3_aegis.jpg" alt="">
+        </div>
+        <h2>Aegis Boost 3</h2>
+        <p></p>
+        <span class="price">3500 ₽</span>
+        <button class="buy" onclick="addToCart('Aegis Boost 3', 3500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Hero5_aegis.webp" alt="">
+        </div>
+        <h2>Aegis Hero 5</h2>
+        <p></p>
+        <span class="price">3500 ₽</span>
+        <button class="buy" onclick="addToCart('Aegis Hero 5', 3500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Voopoo_Vmate_Pro 2.png" alt="">
+        </div>
+        <h2>Voopoo Vmate Pro 2</h2>
+        <p></p>
+        <span class="price">2500 ₽</span>
+        <button class="buy" onclick="addToCart('Voopoo Vmate Pro 2', 2500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/Voopoo_Vmate_Mini.png" alt="">
+        </div>
+        <h2>Voopoo Vmate Mini</h2>
+        <p></p>
+        <span class="price">1500 ₽</span>
+        <button class="buy" onclick="addToCart('Voopoo Vmate Mini', 1500, this)">Купить</button>
+    </div>
+<!--
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/VooPoo-VMATE-MAX.webp" alt="">
+        </div>
+        <h2>Voopoo Vmate MAX</h2>
+        <p></p>
+        <span class="price">3000 ₽</span>
+        <button class="buy" onclick="addToCart('Voopoo Vmate MAX', 3000, this)">Купить</button>
+    </div>
+-->
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/KnightAIO90.png" alt="">
+        </div>
+        <h2>Knight AIO 90W</h2>
+        <p></p>
+        <span class="price">3500 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 3500, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="podes">
+        <div class="img-wrapper">
+            <img src="images/BruskoMinicanFlick.jpg" alt="">
+        </div>
+        <h2>Brusko Minican Flick</h2>
+        <p></p>
+        <span class="price"> ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 2700, this)">Купить</button>
     </div>
 </main>
 
 <audio id="cart-sound" src="sounds/cart-sound.mp3"></audio>
 
 <script src="script.js"></script>
+<!-- ================= ПОДВАЛ ================= -->
+<footer class="site-footer">
+    <p>© 2025 VapeTrip delivery</p>
+    <p>
+<!-- ⚖️ ЮРИДИЧЕСКИЙ ТЕКСТ -->
+        <p class="footer-legal">
+            Информация на сайте носит ознакомительный характер и не является публичной офертой.
+            Продажа электронных сигарет и никотиносодержащей продукции осуществляется
+            <strong>только лицам, достигшим 18 лет</strong>.
+        </p>
+
+        Контакты:
+        <a href="https://t.me/+WzLt2K91Msg0MTY6" target="_blank">Telegram</a>
+    </p>
+</footer>
 </body>
 </html>
