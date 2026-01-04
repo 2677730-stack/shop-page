@@ -518,4 +518,19 @@ html {
     background: rgba(0,0,0,0,5);
     z-index: 1500;
 }
-/* для гита эту зеленку можно снести */
+@media (max-width: 768px) {
+    .catalog {
+        justify-content: space-between;
+        gap: 12 px;
+    }
+    .card {
+        width: calc(50% -10px);
+        max-width: none;
+    }
+    .logo img {
+        height: 28px;
+    }
+    body {
+        padding-top: 90px;
+    }
+}
