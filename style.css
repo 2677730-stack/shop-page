@@ -438,7 +438,7 @@ body {
     }
 
     body {
-        padding-top: 120px;
+        padding-top: 270px;
     }
 }
 /* ================= ПОДВАЛ ================= */
@@ -530,7 +530,5 @@ html {
     .logo img {
         height: 28px;
     }
-    body {
-        padding-top: 90px;
-    }
+
 }
