@@ -17,11 +17,20 @@ function searchProducts(text) {
 
 function applyFilters() {
     document.querySelectorAll('.card').forEach(card => {
-        const category = card.dataset.category;
+        const categories = card.dataset.category.split(' ');
         const title = card.querySelector('h2').textContent.toLowerCase();
-        card.style.display = (activeCategory === 'all' || category === activeCategory) && title.includes(searchText) ? 'flex' : 'none';
+
+        const matchesCategory =
+            activeCategory === 'all' ||
+            categories.includes(activeCategory);
+
+        card.style.display =
+            matchesCategory && title.includes(searchText)
+                ? 'flex'
+                : 'none';
     });
 }
+
 
 // ------------------- Корзина -------------------
 function addToCart(name, price, button) {

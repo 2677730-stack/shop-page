@@ -416,7 +416,7 @@ body {
     .top-bar-inner {
         flex-direction: column;
         padding: 8px;
-        gap: 8px;
+        gap: 1px;
     }
 
     .logo img {
@@ -438,7 +438,7 @@ body {
     }
 
     body {
-        padding-top: 270px;
+        padding-top: 245px;
     }
 }
 /* ================= ПОДВАЛ ================= */
@@ -516,7 +516,7 @@ html {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0,5);
-    z-index: 1500;
+    z-index: 900;
 }
 @media (max-width: 768px) {
     .catalog {
@@ -528,7 +528,7 @@ html {
         max-width: none;
     }
     .logo img {
-        height: 28px;
+        height:0px;
     }
 
 }

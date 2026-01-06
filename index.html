@@ -84,10 +84,6 @@
         Одноразки
     </button>
 
-    <button class="filter-btn" onclick="filterProducts('parts', this)">
-        Испарители
-    </button>
-
 
     <!-- 🔽 ФИЛЬТР С ПОДФИЛЬТРАМИ -->
     <div class="filter-group">
@@ -98,15 +94,20 @@
 
         <div class="sub-filters">
             <button onclick="filterProducts('liquids', this)">Все</button>
-            <button onclick="filterProducts('liquids-Stock', this)">Сток</button>
+            <button onclick="filterProducts('liquids-Stock', this)">Крепкие</button>
             <button onclick="filterProducts('liquids-premium', this)">Премки</button>
         </div>
 
     </div>
 
-    <button class="filter-btn" onclick="filterProducts('ras',this)">   
+        <button class="filter-btn" onclick="filterProducts('ras',this)">   
         расходники
     </button>
+
+        <button class="filter-btn" onclick="filterProducts('parts', this)">
+        Скоро
+    </button>
+
 
 </div>
 
@@ -118,7 +119,7 @@
 
 <main class="catalog">
     <!--тут начинается карта товара при добавлении нового копируй и изменяй-->
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-100">
         <div class="img-wrapper">
             <img src="images/passito-3.png" alt="">
         </div>
@@ -132,8 +133,8 @@
             Режим работы: VW (Strong/Norm/ Soft/DVW)
             Тип коннектора: магнитный
         </p>
-        <span class="price">3800 ₽</span>
-        <button class="buy" onclick="addToCart('Passito 3 (белый)', 3800, this)">Купить</button>
+        <span class="price">3600 ₽</span>
+        <button class="buy" onclick="addToCart('Passito 3 (белый)', 3600, this)">Купить</button>
     </div>
     <!--тут заканчивается карта товара-->
 
@@ -143,58 +144,58 @@
         </div>
         <h2>Bjorn Zloy 2%</h2>
         <p>Жидкость от проиводителя одноразовых электронных сигарет Bjorn</p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Bjorn_Zloy_Dvoyka', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Bjorn_Zloy_Dvoyka', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/Bjorn_Zloy_Strong.jpg" alt="">
         </div>
         <h2>Bjorn Zloy 2% Storng </h2>
         <p>крепкая жидкость от проиводителя одноразовых электронных сигарет Bjorn</p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Bjorn_Zloy_Strong', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Bjorn_Zloy_Strong', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/ZlayaMonashka_TPL_Sour.jpg" alt="">
         </div>
         <h2>Злая монашка 70мг</h2>
         <p>Злая, крепкая, кислая и главное вкусная!</p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Злая монашка', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Злая монашка', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/Podonki_Critical1.jpg" alt="">
         </div>
         <h2>Podonki Critical Super Hard</h2>
         <p>Лучшая линейка жидкости от компании Podonki </p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Podonki Critical', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Podonki Critical', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/ZlayaMonashka_Hotspot.jpg" alt="">
         </div>
         <h2>Монашка & HotSpot</h2>
         <p>Максимально удачная коллаборация! Максимум вкуса, максимум крепкости!</p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Монашка & HotSpot', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Монашка & HotSpot', 450, this)">Купить</button>
     </div>
 
-     <div class="card" data-category="liquids">
+     <div class="card" data-category="liquids liquids-premium">
         <div class="img-wrapper">
             <img src="images/Blum.jfif" alt="">
         </div>
         <h2>Blum 7%+</h2>
         <p>Премиальная жидкость с гарантией отличной вкусопередачи и честной крепкости!</p>
-        <span class="price">850 ₽</span>
-        <button class="buy" onclick="addToCart('Blum 7%+', 850, this)">Купить</button>
+        <span class="price">750 ₽</span>
+        <button class="buy" onclick="addToCart('Blum 7%+', 750, this)">Купить</button>
     </div>
 
     <div class="card" data-category="liquids">
@@ -207,7 +208,7 @@
         <button class="buy" onclick="addToCart('Chakra 2%', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/RaMNaZamerzone.png" alt="">
         </div>
@@ -218,17 +219,17 @@
         <button class="buy" onclick="addToCart('Рик и Морти на замерзоне 2% Strong', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/RickAndMortyTheAnime.jpg" alt="">
         </div>
         <h2>Rick and Morty The Anime 2% Strong</h2>
         <p>Более крепкая линейка жидкости Rick and Morty от компании "tasty Lab"</p>
-        <span class="price">500 ₽</span>
-        <button class="buy" onclick="addToCart('Rick and Morty The Anime', 500, this)">Купить</button>
+        <span class="price">450 ₽</span>
+        <button class="buy" onclick="addToCart('Rick and Morty The Anime', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-Stock">
         <div class="img-wrapper">
             <img src="images/VlagaStrong.png" alt="">
         </div>
@@ -248,14 +249,14 @@
         <button class="buy" onclick="addToCart('Chakra 2%', 450, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="liquids">
+    <div class="card" data-category="liquids liquids-premium">
         <div class="img-wrapper">
             <img src="images/ElfLiq.png" alt="">
         </div>
         <h2>ElfLiq 30мл</h2>
         <p>Премиальная линейка жидкостей от популярного производителя одноразовых электронных сигарет "ELF BAR"</p>
-        <span class="price">700 ₽</span>
-        <button class="buy" onclick="addToCart('ElfLiq 30мл', 700, this)">Купить</button>
+        <span class="price">650 ₽</span>
+        <button class="buy" onclick="addToCart('ElfLiq 30мл', 650, this)">Купить</button>
     </div>
 
       <div class="card" data-category="hq">
@@ -265,8 +266,8 @@
         <h2>Lost Mary MO 30,000</h2>
         <p>Lost Mary MO 30000 предлагает новейший мягкий режим, обеспечивающий ультрамягкий вкус.
              Разработчики утверждают, что постоянство вкуса достигает более 90%, что значительно превосходит отраслевые стандарты.</p>
-        <span class="price">1550 ₽</span>
-        <button class="buy" onclick="addToCart('LostMary MO 30,000', 1550, this)">Купить</button>
+        <span class="price">1350 ₽</span>
+        <button class="buy" onclick="addToCart('LostMary MO 30,000', 1350, this)">Купить</button>
     </div>
 
     <div class="card" data-category="hq">
@@ -276,8 +277,8 @@
         <h2>Puffmi Satisfy 35,000 Ultra Strong</h2>
         <p>Puffmi Satisfy это отличная альтернатива полюбившимся многим одноразкам Pafos. 
         Их достоинства высокая крепкость, отличная вкусопередача и отличное соотношение цена/качество!</p>
-        <span class="price">1650 ₽</span>
-        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1650, this)">Купить</button>
+        <span class="price">1500 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1500, this)">Купить</button>
     </div>
 
     <div class="card" data-category="hq">
@@ -287,8 +288,8 @@
         <h2>Puffmi Mosh 40,000</h2>
         <p>Puffmi Mosh это про мощь вкуса, мощь ощущений.
         Данная версия чуть менее крепкая чем линейка Satisfy из-за отсутвия сильного ТХ (удару по горлу), но всё такая же крепкая!</p>
-        <span class="price">1650 ₽</span>
-        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1650, this)">Купить</button>
+        <span class="price">1550 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Satisfy 35,000 Ultra Strong', 1550, this)">Купить</button>
     </div>
 
     <div class="card" data-category="hq">
@@ -298,8 +299,8 @@
         <h2>Puffmi Flora 25,000</h2>
         <p>Puffmi Flora стильная одноразка, как флакон духов с жемчужной цепочкой!
         Puffmi Flora- самая красивая электронка из всех, что у вас была. </p>
-        <span class="price">1600 ₽</span>
-        <button class="buy" onclick="addToCart('Puffmi Flora 25,000', 1600, this)">Купить</button>
+        <span class="price">1400 ₽</span>
+        <button class="buy" onclick="addToCart('Puffmi Flora 25,000', 1400, this)">Купить</button>
     </div>
 
     <div class="card" data-category="hq">
@@ -310,8 +311,8 @@
         <p>Очередная новинка от компании "Elf Bar"
         Предоставляющая стильный дизайн, информативный экран на лицевой стороне и возможностью регулировки интенсивности парения.
         Перед потреблением незабудьте включить!</p>
-        <span class="price">1550 ₽</span>
-        <button class="buy" onclick="addToCart('Elf Bar BC 30,000', 1550, this)">Купить</button>
+        <span class="price">1400 ₽</span>
+        <button class="buy" onclick="addToCart('Elf Bar BC 30,000', 1400, this)">Купить</button>
     </div>
 
     <div class="card" data-category="hq">
@@ -324,27 +325,27 @@
         <button class="buy" onclick="addToCart('XEO Mesh 35,000', 1000, this)">Купить</button>
     </div>
 
-     <div class="card" data-category="podes">
+     <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/Xros5.webp" alt="">
         </div>
         <h2>Xros 5</h2>
         <p></p>
-        <span class="price">2700 ₽</span>
-        <button class="buy" onclick="addToCart('Xros 5', 2700, this)">Купить</button>
+        <span class="price">2500 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 2500, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/Xros_5_mini.jpeg" alt="">
         </div>
         <h2>Xros 5 mini</h2>
         <p></p>
-        <span class="price">2000 ₽</span>
-        <button class="buy" onclick="addToCart('Xros 5 mini', 2000, this)">Купить</button>
+        <span class="price">1800 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5 mini', 1800, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-100">
         <div class="img-wrapper">
             <img src="images/Boost3_aegis.jpg" alt="">
         </div>
@@ -354,7 +355,7 @@
         <button class="buy" onclick="addToCart('Aegis Boost 3', 3500, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/Hero5_aegis.webp" alt="">
         </div>
@@ -364,17 +365,17 @@
         <button class="buy" onclick="addToCart('Aegis Hero 5', 3500, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/Voopoo_Vmate_Pro 2.png" alt="">
         </div>
         <h2>Voopoo Vmate Pro 2</h2>
         <p></p>
-        <span class="price">2500 ₽</span>
-        <button class="buy" onclick="addToCart('Voopoo Vmate Pro 2', 2500, this)">Купить</button>
+        <span class="price">2300 ₽</span>
+        <button class="buy" onclick="addToCart('Voopoo Vmate Pro 2', 2300, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/Voopoo_Vmate_Mini.png" alt="">
         </div>
@@ -395,25 +396,79 @@
     </div>
 -->
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-100">
         <div class="img-wrapper">
             <img src="images/KnightAIO90.png" alt="">
         </div>
         <h2>Knight AIO 90W</h2>
         <p></p>
-        <span class="price">3500 ₽</span>
-        <button class="buy" onclick="addToCart('Xros 5', 3500, this)">Купить</button>
+        <span class="price">3000 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 3000, this)">Купить</button>
     </div>
 
-    <div class="card" data-category="podes">
+    <div class="card" data-category="podes podes-50">
         <div class="img-wrapper">
             <img src="images/BruskoMinicanFlick.jpg" alt="">
         </div>
         <h2>Brusko Minican Flick</h2>
         <p></p>
-        <span class="price"> ₽</span>
-        <button class="buy" onclick="addToCart('Xros 5', 2700, this)">Купить</button>
+        <span class="price">900 ₽</span>
+        <button class="buy" onclick="addToCart('Xros 5', 900, this)">Купить</button>
     </div>
+
+    <div class="card" data-category="ras">
+        <div class="img-wrapper">
+            <img src="images/XrosCart.jpg" alt="">
+        </div>
+        <h2>Картриджи Xros серии</h2>
+        <p>Совместимы со всей линейкой Xros
+            Картриджы 0,4Om совместимы от 4-й серии устройств
+        </p>
+        <span class="price">270 ₽</span>
+        <button class="buy" onclick="addToCart('Картриджи Xros серии', 270, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="ras">
+        <div class="img-wrapper">
+            <img src="images/TopFlipCart.png" alt="">
+        </div>
+        <h2>Картриджи Vmate серии</h2>
+        <p>Совместимы со всей линейкой устройств Vmate, Vthru </p>
+        <span class="price">300 ₽</span>
+        <button class="buy" onclick="addToCart('Картриджи Vmate серии', 300, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="ras">
+        <div class="img-wrapper">
+            <img src="images/BruskoCart.jpg" alt="">
+        </div>
+        <h2>Картриджи Brusko</h2>
+        <p></p>
+        <span class="price">320 ₽</span>
+        <button class="buy" onclick="addToCart('Картриджи Xros серии', 320, this)">Купить</button>
+    </div>
+
+    <div class="card" data-category="ras">
+        <div class="img-wrapper">
+            <img src="images/K_seriaSmoant.jpg" alt="">
+        </div>
+        <h2>Испарители Smoant K серии</h2>
+        <p>Совместимы с устройствами Pasito 2, Pasito 3, Knight 80, Knight AIO 80W</p>
+        <span class="price">270 ₽</span>
+        <button class="buy" onclick="addToCart('Испарители Smoant K серии', 270, this)">Купить</button>
+    </div>
+
+     <div class="card" data-category="ras">
+        <div class="img-wrapper">
+            <img src="images/AegisBseria.jpg" alt="">
+        </div>
+        <h2>Испарители Aegis B серии</h2>
+        <p>Совместимы с устройствами Aegis Boost 2 (B60), Aegis Boost 3, Aegis Hero, Aegis H45, Aegis H45 Classic, Aegis Boost Plus, Obelisk 65</p>
+        <span class="price">270 ₽</span>
+        <button class="buy" onclick="addToCart('Испарители Aegis B серии', 270, this)">Купить</button>
+    </div>
+
+
 </main>
 
 <audio id="cart-sound" src="sounds/cart-sound.mp3"></audio>
