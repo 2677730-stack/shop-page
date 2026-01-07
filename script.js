@@ -160,3 +160,19 @@ function toggleSubFilters(button) {
 
     sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
 }
+function closeSubFilters() {
+  document.querySelectorAll('.sub-filters').forEach(menu => {
+    menu.style.display = 'none';
+  });
+}
+document.addEventListener('click', (e) => {
+  const isFilterBtn = e.target.closest('.has-sub');
+  const isMenu = e.target.closest('.sub-filters');
+
+  // если клик не по кнопке и не по меню — закрываем всё
+  if (!isFilterBtn && !isMenu) {
+    document.querySelectorAll('.sub-filters').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+});

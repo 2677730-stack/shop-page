@@ -73,9 +73,9 @@
         </button>
 
         <div class="sub-filters">
-            <button onclick="filterProducts('podes', this)">Все</button>
-            <button onclick="filterProducts('podes-50', this)">Менее 50 ватт</button>
-            <button onclick="filterProducts('podes-100', this)">Более 50 ватт</button>
+            <button onclick="filterProducts('podes', this); closeSubFilters()">Все</button>
+            <button onclick="filterProducts('podes-50', this); closeSubFilters()">Менее 50 ватт</button>
+            <button onclick="filterProducts('podes-100', this); closeSubFilters()">Более 50 ватт</button>
         </div>
 
     </div>
@@ -93,9 +93,9 @@
         </button>
 
         <div class="sub-filters">
-            <button onclick="filterProducts('liquids', this)">Все</button>
-            <button onclick="filterProducts('liquids-Stock', this)">Крепкие</button>
-            <button onclick="filterProducts('liquids-premium', this)">Премки</button>
+            <button onclick="filterProducts('liquids', this); closeSubFilters()">Все</button>
+            <button onclick="filterProducts('liquids-Stock', this); closeSubFilters()">Крепкие</button>
+            <button onclick="filterProducts('liquids-premium', this); closeSubFilters()">Премки</button>
         </div>
 
     </div>
