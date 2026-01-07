@@ -100,35 +100,23 @@ function sendOrder() {
         return;
     }
 
-    // --- Настройки Telegram ---
-    const token = '8570588089:AAGFz0T1cuOm1XlXfsI6RE5g5nhwtNbf4hE';      // вставьте токен бота
-    const chat_id = -4995539849;           // chat_id группы, обязательно число, отрицательное
-
-    // Формируем текст сообщения
+   // Формируем текст сообщения
     let text = '📦 Новый заказ:\n';
     text += `Контакт: ${contact}\nАдрес: ${address}\nТовары:\n`;
-    cart.forEach(item => {
-        text += `- ${item.name} — ${item.price} ₽\n`;
-    });
+    cart.forEach(item => text += `- ${item.name} — ${item.price} ₽\n`);
 
-    // Отправка в Telegram
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chat_id, text: text })
+    // ОТПРАВКА УЖЕ ЧЕРЕЗ НАШ СЕРВЕР
+    fetch("/api/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text })
     })
-    .then(res => res.json())
-    .then(data => console.log('Сообщение отправлено в Telegram', data))
-    .catch(err => {
-        console.error('Ошибка отправки в Telegram', err);
-        alert('Ошибка при отправке заказа. Попробуйте позже.');
-    });
+    .then(() => alert("Заказ отправлен!"))
+    .catch(() => alert("Ошибка при отправке заказа. Попробуйте позже."));
 
-    alert('Заказ отправлен!');
     closeOrder();
     clearCart();
 }
-
 // ------------------- Анимация и звук -------------------
 function flyToCart(img) {
     const flyingImg = img.cloneNode(true);
