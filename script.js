@@ -106,7 +106,7 @@ function sendOrder() {
     cart.forEach(item => text += `- ${item.name} — ${item.price} ₽\n`);
 
     // ОТПРАВКА УЖЕ ЧЕРЕЗ НАШ СЕРВЕР
-    fetch("/api/order", {
+    fetch("/api/telegram-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text })
