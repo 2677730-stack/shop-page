@@ -542,3 +542,10 @@ html {
     }
 
 }
+.top-bar {
+    transition: transform 0.25s ease;
+}
+
+.top-bar.hide {
+    transform: translateY(-100%);
+}

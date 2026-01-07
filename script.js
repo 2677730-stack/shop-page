@@ -176,3 +176,24 @@ document.addEventListener('click', (e) => {
     });
   }
 });
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const bar = document.querySelector('.top-bar');
+
+    // Только для телефонов
+    if (window.innerWidth > 768) return;
+
+    const current = window.scrollY;
+
+    // Скроллим вниз — прячем
+    if (current > lastScroll && current > 50) {
+        bar.classList.add('hide');
+    } 
+    // Скроллим вверх — показываем
+    else {
+        bar.classList.remove('hide');
+    }
+
+    lastScroll = current;
+});
